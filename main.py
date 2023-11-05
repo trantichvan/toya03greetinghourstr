@@ -1,5 +1,5 @@
 #region import bailam_f
-from s00_bailam import hi as bailam_f
+from s00_bailam import greeting as bailam_f
 #endregion import bailam_f
 
 
@@ -8,10 +8,25 @@ from s02_chambai import chambai
 
 #region testkey_list
 testcase_list = [
-  {'input': {'name':'AI BTX'}, 'output':'Hi AI BTX',   'tc_name': 'tc0' },
-  {'input': ['HSU'],           'output':'Hi',          'tc_name': 'tc1' },
-  {'input': [None],            'output':'Hi',          'tc_name': 'tc2' },
-  {'input': [''],              'output':'Hi AI BTX',   'tc_name': 'tc3' },
+  {'input': {'hour_str':'6am'}, 'output':'Good morning!',     'tc_name': 'tc00'},
+
+  {'input': ['6am'],            'output':'Good morning!',     'tc_name': 'tc01'},
+  {'input': ['6 am'],           'output':'Good morning!',     'tc_name': 'tc02'},
+  {'input': ['6AM'],            'output':'Good morning!',     'tc_name': 'tc03'},
+  {'input': ['6 AM'],           'output':'Good morning!',     'tc_name': 'tc04'},
+
+  {'input': ['9pm'],            'output':'Good evening!',     'tc_name': 'tc05'},
+  {'input': ['0900pm'],         'output':'Good evening!',     'tc_name': 'tc06'},
+  {'input': ['09:00pm'],        'output':'Good evening!',     'tc_name': 'tc07'},
+  {'input': ['09:00 pm'],       'output':'Good evening!',     'tc_name': 'tc08'},
+  {'input': ['09:00 PM'],       'output':'Good evening!',     'tc_name': 'tc09'},
+
+  {'input': ['1pm'],            'output':'Good afternoon!',   'tc_name': 'tc10'},
+
+  {'input': ['06:00'],          'output':'Good morning!',   'tc_name': 'tc11'},
+  {'input': ['0600'],           'output':'Good morning!',   'tc_name': 'tc12'},
+  {'input': ['21:00'],          'output':'Good evening!',   'tc_name': 'tc13'},
+  {'input': ['2100'],           'output':'Good evening!',   'tc_name': 'tc14'},
 ]
 #endregion testkey_list
 
