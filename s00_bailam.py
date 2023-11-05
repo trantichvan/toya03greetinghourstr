@@ -57,8 +57,7 @@ def checkam(x):
       return('Good morning!')
   if int(x)<12:
     return('Good morning!')
-###############
-
+#---------------------------#
 def checkpm(x):
   if ':' in x:
     x=x.split(":")
@@ -70,25 +69,22 @@ def checkpm(x):
     return('Good evening!')
   elif int(x)<6:
     return('Good afternoon!')
-####################
+#---------------------------#
 def greeting(hour_str):
   x=''
   if 'pm' in hour_str or 'am' in hour_str or 'PM' in hour_str or 'AM' in hour_str:
     if 'am' in hour_str:
       x= hour_str.split("am")
       return checkam(x[0])
-        ##########
     elif 'AM' in hour_str:
       x= hour_str.split("AM")
       return checkam(x[0])
-        ##########
     elif 'pm' in hour_str:
       x= hour_str.split("pm")
       return checkpm(x[0])
     elif 'PM' in hour_str:
       x= hour_str.split("PM")
       return checkpm(x[0])
-  #################################
   else:
     if ':' in hour_str:
       x=hour_str.split(":")
