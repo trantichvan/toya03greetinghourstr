@@ -49,9 +49,72 @@ greeting('2100')             | Good evening!          | 14
 #endregion debai
 
 #region bailam
+from re import X, split
+####################
 def greeting(hour_str):
-  return 'todo'
-  
+  x=''
+  if 'pm' in hour_str or 'am' in hour_str or 'PM' in hour_str or 'AM' in hour_str:
+    if 'am' in hour_str:
+      x= hour_str.split("am")
+      if ':' in x[0]:
+        x=x[0].split(":")
+        if int(x[0])<12:
+          return('Good morning!')
+      if int(x[0])<12:
+        return('Good morning!')
+        ##########
+    elif 'AM' in hour_str:
+      x= hour_str.split("AM")
+      if ':' in x[0]:
+        x=x[0].split(":")
+        if int(x[0])<12:
+          return('Good morning!')
+      if int(x[0])<12:
+        return('Good morning!')
+        ##########
+    elif 'pm' in hour_str:
+      x= hour_str.split("pm")
+      if ':' in x[0]:
+        x=x[0].split(":")
+        if int(x[0])<6:
+          return('Good afternoon!')
+        elif int(x[0])>=6:
+          return('Good evening!')
+          ###########
+      if int(x[0])>=6:
+        return('Good evening!')
+      elif int(x[0])<6:
+        return('Good afternoon!')
+    elif 'PM' in hour_str:
+      x= hour_str.split("PM")
+      if ':' in x[0]:
+        x=x[0].split(":")
+        if int(x[0])<6:
+          return('Good afternoon!')
+        elif int(x[0])>=6:
+          return('Good evening!')
+          ###########
+      if int(x[0])>=6:
+        return('Good evening!')
+      elif int(x[0])<6:
+        return('Good afternoon!')
+  #################################
+  else:
+    if ':' in hour_str:
+      x=hour_str.split(":")
+      if int(x[0])<12:
+        return('Good morning!')
+      elif int(x[0]) >=12 and int(x[0])<18:
+        return('Good afternoon!')
+      else:
+        return('Good evening!')
+    else:
+      if int(hour_str[0:2])>=18:
+        return('Good evening!')
+      elif int(hour_str[0:2]) >=12 and int(hour_str[0:2])<18:
+        return('Good afternoon!')
+      else:
+        return('Good morning!')
 
 if __name__=='__main__':
   pass
