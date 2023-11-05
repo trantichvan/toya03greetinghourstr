@@ -50,54 +50,44 @@ greeting('2100')             | Good evening!          | 14
 
 #region bailam
 from re import X, split
+def checkam(x):
+  if ':' in x:
+    x=x.split(":")
+    if int(x[0])<12:
+      return('Good morning!')
+  if int(x)<12:
+    return('Good morning!')
+###############
+
+def checkpm(x):
+  if ':' in x:
+    x=x.split(":")
+    if int(x[0])<6:
+      return('Good afternoon!')
+    elif int(x[0])>=6:
+      return('Good evening!')
+  if int(x)>=6:
+    return('Good evening!')
+  elif int(x)<6:
+    return('Good afternoon!')
 ####################
 def greeting(hour_str):
   x=''
   if 'pm' in hour_str or 'am' in hour_str or 'PM' in hour_str or 'AM' in hour_str:
     if 'am' in hour_str:
       x= hour_str.split("am")
-      if ':' in x[0]:
-        x=x[0].split(":")
-        if int(x[0])<12:
-          return('Good morning!')
-      if int(x[0])<12:
-        return('Good morning!')
+      return checkam(x[0])
         ##########
     elif 'AM' in hour_str:
       x= hour_str.split("AM")
-      if ':' in x[0]:
-        x=x[0].split(":")
-        if int(x[0])<12:
-          return('Good morning!')
-      if int(x[0])<12:
-        return('Good morning!')
+      return checkam(x[0])
         ##########
     elif 'pm' in hour_str:
       x= hour_str.split("pm")
-      if ':' in x[0]:
-        x=x[0].split(":")
-        if int(x[0])<6:
-          return('Good afternoon!')
-        elif int(x[0])>=6:
-          return('Good evening!')
-          ###########
-      if int(x[0])>=6:
-        return('Good evening!')
-      elif int(x[0])<6:
-        return('Good afternoon!')
+      return checkpm(x[0])
     elif 'PM' in hour_str:
       x= hour_str.split("PM")
-      if ':' in x[0]:
-        x=x[0].split(":")
-        if int(x[0])<6:
-          return('Good afternoon!')
-        elif int(x[0])>=6:
-          return('Good evening!')
-          ###########
-      if int(x[0])>=6:
-        return('Good evening!')
-      elif int(x[0])<6:
-        return('Good afternoon!')
+      return checkpm(x[0])
   #################################
   else:
     if ':' in hour_str:
